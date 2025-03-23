@@ -20,6 +20,10 @@ app.use(logging_Middleware_1.loggingMiddleware);
 // Routes
 app.use('/api/auth', auth_route_1.default);
 app.use('/api/v1', note_route_1.default);
+// Base URL Response
+app.get('/', (req, res) => {
+    res.send('Welcome to the API! 🎉');
+});
 (0, database_1.default)()
     .then(() => {
     app.listen(PORT, () => {

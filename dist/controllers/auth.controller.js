@@ -24,7 +24,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.register = exports.login = void 0;
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const service_1 = __importDefault(require("../services/service"));
 const auth_service_1 = require("../services/auth.service");
 const user_model_1 = __importDefault(require("../models/user.model"));
@@ -38,7 +38,7 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             return;
         }
         // Verify password
-        const isPasswordValid = yield bcrypt_1.default.compare(password, user.password);
+        const isPasswordValid = yield bcryptjs_1.default.compare(password, user.password);
         if (!isPasswordValid) {
             res.status(401).json({ error: 'Invalid credentials' });
             return;
@@ -61,7 +61,7 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { name, email, phone, password } = req.body;
         // Hash password
-        const hashedPassword = yield bcrypt_1.default.hash(password, 10);
+        const hashedPassword = yield bcryptjs_1.default.hash(password, 10);
         const user = yield user_model_1.default.create({
             name,
             email,
