@@ -1,4 +1,3 @@
-// middleware/validation.middleware.ts
 import { Request, Response, NextFunction } from 'express';
 import { RegisterCredentials, LoginCredentials } from '../interfaces/auth.interface';
 

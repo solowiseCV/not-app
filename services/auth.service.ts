@@ -8,7 +8,6 @@ export interface JwtPayload {
   email: string;
 }
 
-// JWT secret should be in environment variables
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 const JWT_EXPIRES_IN = '24h';
 

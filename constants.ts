@@ -1,5 +1,5 @@
 const constants = {
-    DATABASE_URI: process.env.DATABASE_URI  || 'mongodb://localhost:27017/notes_db',
+    DATABASE_URI: process.env.DATABASE_URI || 'mongodb://localhost:27017/notes_db',
 
     DATABASES: {
        NOTE: "note",

@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import { verifyToken } from '../services/auth.service';
 import { JwtPayload } from '../services/auth.service';
 
-// Extend Express Request to include user information
 declare global {
   namespace Express {
     interface Request {
@@ -11,7 +10,6 @@ declare global {
   }
 }
 
-// Custom type guard
 export function isAuthenticatedUser(payload: any): payload is JwtPayload {
   return payload && typeof payload.userId === 'string' && typeof payload.email === 'string';
 }
