@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { Request, Response } from 'express';
 import { LoginCredentials, RegisterCredentials } from '../interfaces/auth.interface';
 import NoteServices from '../services/service';
