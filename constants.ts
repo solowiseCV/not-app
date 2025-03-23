@@ -17,6 +17,8 @@ const constants = {
         ERROR: "Resource error",
         CREATED: "Notes created successfully",
         DELETED: "Notes deleted successfully",
+      CATEGORY_NOT_FOUND: "No notes found in this category",
+       NOTE_UPDATED: "Note updated successfully",
         NOT_FOUND: "Note not found"
     }
 };
