@@ -10,13 +10,13 @@ router.use(authenticate);
 
 router.get("/", Controller.fetch);
 router.get("/notes", Controller.fetchMany);
-router.post("/notes", validateNote, Controller.create);
+router.post("/notes",authenticate , validateNote, Controller.create);
 router.get("/notes/:id", Controller.fetchOne);
-router.patch("/notes/:id", validateNote, Controller.update);
+router.patch("/notes/:id",authenticate , validateNote, Controller.update);
 router.delete("/notes/:id", Controller.delete);
-router.post("/notes/categories", validateCategory, Controller.createCategory);
+router.post("/notes/categories",authenticate , validateCategory, Controller.createCategory);
 router.get("/notes/categories/:categoryId", Controller.getNotesByCategory);
-router.put("/notes/:id", validateNote, Controller.updateNote);
+router.put("/notes/:id", authenticate , validateNote, Controller.updateNote);
 
 export default router; 
 

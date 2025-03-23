@@ -17,11 +17,13 @@ app.use(express.json());
 app.use(loggingMiddleware);
 
 // Routes
-app.use("/", (req, res) => {
-  res.send("Welcome to the Notes API");   
-});
 app.use('/api/auth', authRouter); 
 app.use('/api/v1', noteRouter);   
+
+// Base URL Response
+app.get('/', (req, res) => {
+  res.send('Welcome to the API! 🎉');
+});
 
 database()
   .then(() => {
